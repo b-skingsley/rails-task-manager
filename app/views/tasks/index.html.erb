@@ -1,0 +1,11 @@
+<h2>Tasks Index</h2>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <li><%= icon('far', 'check-square') %> <%= link_to task.title, task_path(task) %></li>
+    <% else %>
+      <li><%= icon('far', 'square') %> <%= link_to task.title, task_path(task) %></li>
+    <% end %>
+  <% end %>
+</ul>
